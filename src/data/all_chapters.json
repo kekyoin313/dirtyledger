@@ -1,32 +1,32 @@
 {
-	"chapter_1": [
-		{"name": "Narator", "portrait": "", "text": "Jember, Juni 2026. Bisnis waralaba 'Kopi Sejahtera' sedang berkembang sangat pesat di pusat kota..."},
-		{"name": "Narator", "portrait": "", "text": "Namun, dibalik ramainya pengunjung, tim Audit Internal pusat mendeteksi pola anomali yang janggal pada siklus Kas Kecil di cabang utama. Laporan keuangannya terlihat 'berdarah'."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Saya Bambang, Auditor Forensik yang ditugaskan untuk menyelidiki kasus ini. Laporan fisik kas dan pencatatan sistem di cabang ini sama sekali tidak sinkron."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Admin kasir di sini bekerja terlalu rapi... atau mungkin mereka terlalu pintar dalam menyembunyikan sesuatu dari mata audit."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Seorang informan rahasia membisiki saya bahwa ada sebuah Flashdisk berisi pembukuan ganda atau 'Dirty Ledger' yang sengaja disembunyikan di sekitar meja kerja ini."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Selain itu, saya juga harus menemukan Kuitansi pembelian aset yang asli. Ada dugaan kuat terjadi mark-up biaya renovasi kafe yang nilainya tidak masuk akal."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Dan satu petunjuk terakhir... Laci bawah meja itu terkunci rapat. Saya harus mencari Kunci cadangan untuk melihat dokumen mutasi rekening koran yang disembunyikan."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Gunakan ketelitianmu. Jika data fisik dan data digital di sistem tidak cocok, maka korupsi pasti sedang terjadi di sini. Mari kita mulai penyelidikan!"}
+	"prologue": [
+		{"name": "Narator", "portrait": "", "text": "Arthaloka, 2032. Negara yang awalnya menjadi simbol kemakmuran ekonomi kini terguncang. Harga saham berjatuhan dan laporan keuangan berbagai perusahaan besar mendadak tidak sinkron."},
+		{"name": "Narator", "portrait": "", "text": "Financial Integrity Bureau (FIB) mendeteksi adanya anomali terstruktur. Transaksi dimanipulasi, aset menghilang, dan seluruh aliran dana mencurigakan mengarah ke pusat keuangan di Ibukota Mahartha."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Saya Arya Mahendra, investigator senior FIB. Kasus ini bukan kelalaian administratif biasa. Ini adalah kejahatan kerah putih yang dirancang sangat rapi."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Sistem jaringan mereka terlalu bersih. Seseorang di dalam server pusat sengaja menghapus jejak audit digital harian sebelum kami sempat mengunduhnya."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Informan kami menyebutkan ada sebuah Flashdisk berisi salinan enkripsi database ganda, atau 'Dirty Ledger', yang disembunyikan di area perimeter ini."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Selain itu, kita harus menemukan Kuitansi transaksi fiktif dengan perusahaan cangkang. Ada dugaan mark-up dana investasi publik bernilai miliaran Arthaloka."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Petunjuk terakhir... Laci enkripsi di bawah meja ini terkunci rapat. Kita butuh Kunci otorisasi fisik untuk mengambil dokumen mutasi rekening luar negeri."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Buka matamu lebar-lebar. Jika pembukuan digital dan bukti fisik ini tidak cocok, kita bisa membongkar konspirasi terbesar di negara ini. Mari kita mulai analisis!"}
 	],
-	"chapter_2": [
-		{"name": "Narator", "portrait": "", "text": "Setelah berhasil mengamankan bukti-bukti awal di laci kasir, Bambang melangkah masuk ke ruang arsip utama di lantai dua..."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Bukti kuitansi renovasi kemarin memang palsu, tapi siapa dalang utama yang menandatanganinya? Dokumen otorisasi pasti ada di dalam ruangan ini."},
-		{"name": "Admin Kasir", "portrait": "res://assets/character/admin/kasir.webp", "text": "Eh, Pak Bambang? Ada keperluan apa ya? Bukankah pemeriksaan di lantai bawah tadi sudah selesai semua?"},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Belum selesai, Tolong tunjukkan Buku Log Pengeluaran Besar untuk periode kuartal pertama. Jangan ada satu lembar pun yang disembunyikan."},
-		{"name": "Admin Kasir", "portrait": "res://assets/character/admin/kasir.webp", "text": "(Gugup) Ah... buku log itu... seingat saya dibawa oleh Manajer Cabang ke rumahnya kemarin, Pak. Saya tidak memegangnya."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Jangan berbohong. Saya melihat tumpukan map hitam di sudut lemari itu. Salah satunya pasti berisi data rekonsiliasi bank yang sengaja dipisahkan."},
-		{"name": "Narator", "portrait": "", "text": "Suasana ruangan mendadak menjadi tegang. Sang admin tampak mulai panik saat Bambang mendekati meja kerjanya."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Ada sesuatu yang mengganjal di bawah keyboard ini... Sebuah catatan kecil berisi password akun sistem keuangan pusat! Ini bisa jadi kunci jawaban kita."}
+	"deposition": [
+		{"name": "Narator", "portrait": "", "text": "Berhasil mengamankan bukti awal di ruang server bawah, Arya melangkah masuk ke Direktorat Pengawasan Pasar Modal di lantai dua..."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Data kuitansi investasi kemarin terbukti fiktif dan dialirkan ke perusahaan bayangan. Pertanyaannya, siapa pejabat tinggi yang memberikan kode akses otorisasi?"},
+		{"name": "Staff Otoritas", "portrait": "res://assets/character/staff/staff.webp", "text": "Eh, Agen Arya? Ada keperluan apa lagi? Bukankah seluruh berkas kliring di lantai bawah sudah kami serahkan semua?"},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Belum cukup. Tunjukkan Buku Log Otorisasi Transaksi Besar kuartal ini. Jangan coba-coba menyembunyikan dokumen mutasi harian."},
+		{"name": "Staff Otoritas", "portrait": "res://assets/character/staff/staff.webp", "text": "(Gugup) Ah... buku log itu... seingat saya sedang dibawa oleh perwakilan Komisioner untuk ditinjau ulang di kediamannya, Pak. Kami tidak memegangnya."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Alasan klasik. Saya tahu tumpukan map enkripsi hitam di lemari besi itu berisi data rekonsiliasi antar-bank yang sengaja dipisahkan dari sistem utama."},
+		{"name": "Narator", "portrait": "", "text": "Suasana ruangan mendingin. Staf otoritas mulai panik saat Arya mendekati meja enkripsi data utama."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Tunggu, lihat di bawah perangkat enkripsi ini... Sebuah catatan sandi bypass akun sistem keuangan pusat tingkat tinggi! Ini adalah pintu masuk menuju dalang utamanya."}
 	],
-	"chapter_3": [
-		{"name": "Narator", "portrait": "", "text": "Malam harinya di kantor, jam dinding sudah menunjukkan pukul 23.00 WIB. Ruangan kafe sudah sepi, namun lampu ruang kerja manajer masih menyala sedikit..."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Semua potongan teka-teki dari flashdisk, kuitansi mark-up, dan akun sistem keuangan yang kita kumpulkan kini mulai mengerucut pada satu nama."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Manajer cabang melakukan penyelewengan dana dengan modus 'lapping'—menggunakan uang setoran hari ini untuk menutupi pencurian kas hari sebelumnya."},
-		{"name": "Narator", "portrait": "", "text": "Bambang memeriksa tempat sampah di samping meja sang manajer dan menemukan secarik kertas memo yang dirobek secara tergesa-gesa."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Tunggu... Ini adalah instruksi tertulis kepada admin untuk menghapus riwayat transaksi fiktif di server lokal sebelum tim audit pusat datang!"},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Untung saja mereka terlambat. Data cadangan di flashdisk rahasia yang kita temukan di Chapter 1 adalah bukti hukum pidana yang tidak bisa dibantah."},
-		{"name": "Narator", "portrait": "", "text": "Dengan seluruh berkas pembukuan ganda gila ini di tangan, audit forensik resmi dinyatakan selesai dan siap dilaporkan ke direksi pusat."},
-		{"name": "Satria (Auditor)", "portrait": "res://assets/character/bambang/bambang.webp", "text": "Kerja bagus. Kedok bisnis 'Kopi Sejahtera' yang dijadikan alat pencucian uang oleh oknum internal ini akhirnya terbongkar total. Keadilan telah ditegakkan!"}
+	"subpoena": [
+		{"name": "Narator", "portrait": "", "text": "Malam harinya di Ibukota Mahartha, jam menunjukkan pukul 23.00 WIB. Operasi 'Black Dawn' diluncurkan secara rahasia langsung di ruang kerja Ketua Komisioner Otoritas Pasar Modal."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Seluruh potongan teka-teki dari flashdisk terenkripsi, kuitansi korporasi cangkang, dan kode bypass akun kini mengerucut pada satu nama besar."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Drakar Surya memanfaatkan jabatan regulasinya untuk melindungi dan mengendalikan Black Ledger Network, memanipulasi dana pasar modal secara masif."},
+		{"name": "Narator", "portrait": "", "text": "Arya memeriksa mesin penghancur kertas di sudut ruangan dan menemukan potongan memo instruksi rahasia yang dihancurkan secara tergesa-gesa."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Ini dia! Instruksi tertulis langsung dari Drakar Surya kepada tim IT untuk menghapus paksa seluruh server cadangan lokal sebelum tim FIB tiba!"},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Tapi mereka kalah cepat. Berkas pembukuan ganda Dirty Ledger yang kita amankan sejak awal adalah bukti hukum absolut yang tidak bisa dibantah di pengadilan."},
+		{"name": "Narator", "portrait": "", "text": "Dengan terkumpulnya seluruh berkas konspirasi finansial ini, investigasi forensik dinyatakan selesai. Surat panggilan paksa (Subpoena) resmi diterbitkan."},
+		{"name": "Arya (FIB Investigator)", "portrait": "res://assets/character/arya/arya.webp", "text": "Kerja bagus. Operasi selesai. Kedok jaringan Black Ledger yang merusak ekonomi negara akhirnya terbongkar total. Keadilan untuk Arthaloka telah ditegakkan!"}
 	]
 }
