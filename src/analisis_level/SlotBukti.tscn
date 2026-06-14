@@ -1,17 +1,56 @@
 [gd_scene format=3 uid="uid://duvg1iu6nxcir"]
 
-[ext_resource type="Script" uid="uid://cv8nc0tquiba" path="res://src/analisis_level/SlotBukti.gd" id="1_20uor"]
 [ext_resource type="Texture2D" uid="uid://bamkcvgv7wlxl" path="res://assets/Green/Double/button_rectangle_flat.png" id="2_t8qpb"]
 [ext_resource type="Texture2D" uid="uid://dmjupsxdd8l6g" path="res://assets/Green/Default/button_rectangle_gloss.png" id="3_ivkdj"]
 [ext_resource type="Texture2D" uid="uid://btjkdlcxcf4yw" path="res://assets/Green/Default/button_rectangle_flat.png" id="4_0jw7j"]
 [ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="5_ny814"]
+
+[sub_resource type="GDScript" id="GDScript_fuoyy"]
+script/source = "extends Control
+
+signal analisis_selesai(nama_barang)
+
+@onready var texture_rect = $TextureRect
+@onready var label_nama = $Label
+@onready var btn_analisis = $ButtonAnalisis
+@onready var progress_bar = $TextureProgressBar # Sesuaikan nama node ProgressBar di scenemu
+@onready var timer = $Timer
+
+var nama_item: String = \"\"
+var sedang_analisis: bool = false
+
+func set_bukti(nama: String, tex: Texture2D) -> void:
+	nama_item = nama
+	label_nama.text = nama
+	texture_rect.texture = tex
+	progress_bar.value = 0
+	progress_bar.hide()
+
+func mulai_proses_analisis() -> void:
+	sedang_analisis = true
+	btn_analisis.disabled = true
+	progress_bar.show()
+	timer.start(10.0) # Hitung mundur berjalan selama 10 detik fiktif
+
+func _process(_delta: float) -> void:
+	if sedang_analisis and not timer.is_stopped():
+		# Mengisi progress bar dari 0% ke 100% berdasarkan sisa waktu timer
+		progress_bar.value = ((10.0 - timer.time_left) / 10.0) * 100
+
+func _on_timer_timeout() -> void:
+	sedang_analisis = false
+	progress_bar.hide()
+	btn_analisis.disabled = false
+	btn_analisis.text = \"Lihat Hasil\"
+	analisis_selesai.emit(nama_item)
+"
 
 [node name="SlotBukti" type="TextureRect" unique_id=1528560904]
 offset_left = 147.0
 offset_top = 160.0
 offset_right = 394.0
 offset_bottom = 482.0
-script = ExtResource("1_20uor")
+script = SubResource("GDScript_fuoyy")
 
 [node name="ButtonAnalisis" type="TextureButton" parent="." unique_id=13664888]
 layout_mode = 1
@@ -51,10 +90,10 @@ text = "Analisis"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1825795984]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 13.0
-offset_right = 216.0
-offset_bottom = 267.0
+offset_left = 37.0
+offset_top = 15.0
+offset_right = 231.0
+offset_bottom = 269.0
 
 [node name="Label" type="Label" parent="." unique_id=1474695214]
 layout_mode = 0
