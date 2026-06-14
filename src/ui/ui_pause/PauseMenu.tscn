@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://b7ydyp3bkypgl"]
+
+[ext_resource type="Script" uid="uid://ct0ysywjysxdm" path="res://src/ui/ui_pause/pause_manager.gd" id="1_36k83"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="2_r2gvh"]
+[ext_resource type="Texture2D" uid="uid://ceb3ot1387hw7" path="res://assets/Blue/button_rectangle_depth_flat.svg" id="3_sev4g"]
+[ext_resource type="Texture2D" uid="uid://byfa0pvwe7vm5" path="res://assets/Blue/button_rectangle_depth_gloss.svg" id="4_04dm0"]
+[ext_resource type="Texture2D" uid="uid://dknya0j08q12y" path="res://assets/Blue/button_rectangle_depth_gradient.svg" id="5_idhon"]
+[ext_resource type="PackedScene" uid="uid://b3qkn756qjr1f" path="res://src/ui/ui_options/OptionMenu.tscn" id="6_r2gvh"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1020807030]
+
+[node name="PauseManager" type="Control" parent="." unique_id=765662396]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_36k83")
+
+[node name="ColorRect" type="ColorRect" parent="PauseManager" unique_id=473554294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32941177)
+
+[node name="Label" type="Label" parent="PauseManager" unique_id=136289395]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.5
+offset_top = 120.0
+offset_right = 249.5
+offset_bottom = 233.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 100
+text = "PAUSED"
+
+[node name="MainButtons" type="VBoxContainer" parent="PauseManager" unique_id=702004445]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -55.0
+offset_right = 205.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ResumeButton" type="TextureButton" parent="PauseManager/MainButtons" unique_id=1184988263]
+layout_mode = 2
+texture_normal = ExtResource("3_sev4g")
+texture_pressed = ExtResource("4_04dm0")
+texture_hover = ExtResource("5_idhon")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PauseManager/MainButtons/ResumeButton" unique_id=1385807275]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+
+[node name="OptionButton" type="TextureButton" parent="PauseManager/MainButtons" unique_id=989087612]
+layout_mode = 2
+texture_normal = ExtResource("3_sev4g")
+texture_pressed = ExtResource("4_04dm0")
+texture_hover = ExtResource("5_idhon")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PauseManager/MainButtons/OptionButton" unique_id=1629278758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 30
+text = "Option"
+
+[node name="ReturnButton" type="TextureButton" parent="PauseManager/MainButtons" unique_id=1094866593]
+layout_mode = 2
+texture_normal = ExtResource("3_sev4g")
+texture_pressed = ExtResource("4_04dm0")
+texture_hover = ExtResource("5_idhon")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PauseManager/MainButtons/ReturnButton" unique_id=712857064]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 25
+text = "Return to Main Menu"
+
+[node name="QuitButton" type="TextureButton" parent="PauseManager/MainButtons" unique_id=866484100]
+layout_mode = 2
+texture_normal = ExtResource("3_sev4g")
+texture_pressed = ExtResource("4_04dm0")
+texture_hover = ExtResource("5_idhon")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PauseManager/MainButtons/QuitButton" unique_id=2122733488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="Options" parent="PauseManager" unique_id=1142443925 instance=ExtResource("6_r2gvh")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 386.0
+offset_top = 153.0
+offset_right = 778.0
+offset_bottom = 545.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="PauseManager/MainButtons/ResumeButton" to="PauseManager" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseManager/MainButtons/OptionButton" to="PauseManager" method="_on_option_button_pressed"]
+[connection signal="pressed" from="PauseManager/MainButtons/ReturnButton" to="PauseManager" method="_on_return_button_pressed"]
+[connection signal="pressed" from="PauseManager/MainButtons/QuitButton" to="PauseManager" method="_on_quit_button_pressed"]

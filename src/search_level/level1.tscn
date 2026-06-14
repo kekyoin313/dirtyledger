@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://b6eiuugmvec45"]
+
+[ext_resource type="Script" uid="uid://bs3jvk7rxp3c6" path="res://src/search_level/level_1.gd" id="1_v8kj3"]
+[ext_resource type="Texture2D" uid="uid://d4hubqvm4xujw" path="res://Generated Image March 28, 2026 - 12_26AM.png" id="2_v8kj3"]
+[ext_resource type="Texture2D" uid="uid://b327lg8ynrg0l" path="res://assets/evidence/kwitansi.jpg" id="3_i2041"]
+[ext_resource type="Texture2D" uid="uid://c44xtoppeqoia" path="res://assets/evidence/kunci.png" id="4_xy4tn"]
+[ext_resource type="Texture2D" uid="uid://btpjenxvs3wos" path="res://assets/evidence/flashdisk.png" id="5_usj0q"]
+[ext_resource type="PackedScene" uid="uid://cfd34ekpkf2vx" path="res://src/ui/ui_misi_sukses/MisiSukses.tscn" id="6_crycw"]
+
+[node name="Node2D" type="Node2D" unique_id=1100373369]
+script = ExtResource("1_v8kj3")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1929647488]
+
+[node name="InventoryBar" type="Panel" parent="UI" unique_id=1716615002]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = 278.0
+offset_right = 576.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelContainer" type="HBoxContainer" parent="UI/InventoryBar" unique_id=961330573]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.5
+offset_top = -20.0
+offset_right = 539.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/InventoryBar/LabelContainer" unique_id=388309264]
+layout_mode = 2
+text = "Kwitansi"
+
+[node name="Label2" type="Label" parent="UI/InventoryBar/LabelContainer" unique_id=1464694249]
+layout_mode = 2
+text = "Kunci"
+
+[node name="Label3" type="Label" parent="UI/InventoryBar/LabelContainer" unique_id=2117818278]
+layout_mode = 2
+text = "Flashdisk"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1029868842]
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v8kj3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="obj1" type="TextureButton" parent="." unique_id=319013126]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 333.99997
+offset_top = 264.00003
+offset_right = 473.99997
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.31837425
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("3_i2041")
+
+[node name="obj2" type="TextureButton" parent="." unique_id=1458280174]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 765.00006
+offset_top = 574.0
+offset_right = 2765.0
+offset_bottom = 2574.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.77318084
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("4_xy4tn")
+
+[node name="obj3" type="TextureButton" parent="." unique_id=1519378633]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 791.0
+offset_top = 311.99997
+offset_right = 2791.0
+offset_bottom = 2312.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.43109632
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("5_usj0q")
+
+[node name="CanvasLayer" parent="." unique_id=231319626 instance=ExtResource("6_crycw")]
+
+[connection signal="pressed" from="obj1" to="." method="_on_obj_1_pressed"]
+[connection signal="pressed" from="obj2" to="." method="_on_obj_2_pressed"]
+[connection signal="pressed" from="obj3" to="." method="_on_obj_3_pressed"]

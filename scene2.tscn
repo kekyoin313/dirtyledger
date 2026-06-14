@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ghwkhgn3gpiy"]
+
+[ext_resource type="Script" uid="uid://cqs7w4bjjnnnb" path="res://scene_2.gd" id="1_g28hq"]
+[ext_resource type="PackedScene" uid="uid://g6aqs4fysyi7" path="res://src/ui/dialog_box/DialogManager.tscn" id="2_3hvph"]
+
+[node name="Scene2" type="Control" unique_id=1610025312]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g28hq")
+
+[node name="DialogManager" parent="." unique_id=1228488748 instance=ExtResource("2_3hvph")]

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ci5yoiwo0ebm3"]
+
+[ext_resource type="Script" uid="uid://bvuvwndfur1op" path="res://src/ui/transition/transition_layer.gd" id="1_fj4yj"]
+[ext_resource type="AudioStream" uid="uid://r71bhvm0i8k" path="res://assets/sfx/WhatsApp Audio 2026-06-14 at 9.09.10 PM.mp3" id="2_uf3q0"]
+
+[sub_resource type="Animation" id="Animation_7grw1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fj4yj"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uf3q0"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_scb26"]
+_data = {
+&"RESET": SubResource("Animation_7grw1"),
+&"fade_in": SubResource("Animation_fj4yj"),
+&"fade_out": SubResource("Animation_uf3q0")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1031751780]
+script = ExtResource("1_fj4yj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=942561259]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=356604008]
+libraries/ = SubResource("AnimationLibrary_scb26")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1095393481]
+stream = ExtResource("2_uf3q0")

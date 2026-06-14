@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bkgdsncx3x3ck"]
+
+[ext_resource type="Script" uid="uid://db5lecyoay2ll" path="res://src/analisis_level/AnalisisUtama.gd" id="1_crnvf"]
+
+[node name="AnalisisUtama" type="Control" unique_id=479717901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crnvf")
+
+[node name="DataComparison" type="Control" parent="." unique_id=615647830]
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 634.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DataComparison" unique_id=20554397]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 173.0
+offset_right = 966.0
+offset_bottom = 461.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1712309713]
+
+[node name="StoryPanel" type="Panel" parent="CanvasLayer" unique_id=1284058418]
+offset_left = 194.0
+offset_top = 160.0
+offset_right = 943.0
+offset_bottom = 340.0
+
+[node name="StoryLabel" type="RichTextLabel" parent="CanvasLayer/StoryPanel" unique_id=1608660432]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = 749.0
+offset_bottom = 193.0
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/StoryPanel" unique_id=515405665]
+layout_mode = 0
+offset_left = -54.0
+offset_top = -43.0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="BackButton" type="Button" parent="." unique_id=244963513]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 45.0

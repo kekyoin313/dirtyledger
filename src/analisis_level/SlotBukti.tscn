@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://duvg1iu6nxcir"]
+
+[ext_resource type="Script" uid="uid://cv8nc0tquiba" path="res://src/analisis_level/SlotBukti.gd" id="1_20uor"]
+[ext_resource type="Texture2D" uid="uid://bamkcvgv7wlxl" path="res://assets/Green/Double/button_rectangle_flat.png" id="2_t8qpb"]
+[ext_resource type="Texture2D" uid="uid://dmjupsxdd8l6g" path="res://assets/Green/Default/button_rectangle_gloss.png" id="3_ivkdj"]
+[ext_resource type="Texture2D" uid="uid://btjkdlcxcf4yw" path="res://assets/Green/Default/button_rectangle_flat.png" id="4_0jw7j"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="5_ny814"]
+
+[node name="SlotBukti" type="TextureRect" unique_id=1528560904]
+offset_left = 147.0
+offset_top = 160.0
+offset_right = 394.0
+offset_bottom = 482.0
+script = ExtResource("1_20uor")
+
+[node name="ButtonAnalisis" type="TextureButton" parent="." unique_id=13664888]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 131.0
+offset_right = 114.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_t8qpb")
+texture_pressed = ExtResource("3_ivkdj")
+texture_hover = ExtResource("4_0jw7j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ButtonAnalisis" unique_id=1588147633]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ny814")
+theme_override_font_sizes/font_size = 30
+text = "Analisis"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1825795984]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 13.0
+offset_right = 216.0
+offset_bottom = 267.0
+
+[node name="Label" type="Label" parent="." unique_id=1474695214]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 273.0
+offset_right = 217.0
+offset_bottom = 318.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1706098255]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -27.0
+offset_right = 222.0
+offset_bottom = 16.0
+
+[node name="Timer" type="Timer" parent="." unique_id=589841293]
+wait_time = 10.0
+
+[connection signal="pressed" from="ButtonAnalisis" to="." method="_on_button_analisis_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

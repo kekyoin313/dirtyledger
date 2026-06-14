@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blstyr8l04vd0"
+path="res://.godot/imported/Lobby - Library of Ruina OST - (320 Kbps).mp3-282c634e230d32ec21a75050e7ebce92.mp3str"
+
+[deps]
+
+source_file="res://assets/bgm/Lobby - Library of Ruina OST - (320 Kbps).mp3"
+dest_files=["res://.godot/imported/Lobby - Library of Ruina OST - (320 Kbps).mp3-282c634e230d32ec21a75050e7ebce92.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

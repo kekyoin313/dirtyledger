@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://ctlwnqjq47g73"]
+
+[ext_resource type="Texture2D" uid="uid://caopva7ne2d8m" path="res://assets/bg_level/bg_analisis.png" id="1_b2k2x"]
+[ext_resource type="FontFile" uid="uid://cnl4jim3r54ss" path="res://assets/Font/Kenney Future Narrow.ttf" id="2_shwe3"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="9_qt5q0"]
+
+[sub_resource type="GDScript" id="GDScript_oedd3"]
+script/source = "extends Control
+
+# 1. Database Cerita Multi-Chapter Akuntansi Forensik
+var database_cerita = {
+	\"chapter_1\": {
+		\"Kunci\": \"Kunci fisik ini digunakan untuk brankas rahasia di bawah meja kasir. Di dalamnya tersembunyi buku kas harian asli kuartal pertama.\",
+		\"Flashdisk\": \"Flashdisk milik admin ini berisi file excel terenkripsi. Setelah dibongkar, ditemukan daftar aliran dana 'tak resmi' alias pembukuan ganda Dirty Ledger.\",
+		\"Kwitansi\": \"Kwitansi biaya renovasi ini palsu. Stempel perusahaannya berbeda dengan stempel resmi, dan nominalnya sengaja digelembungkan hingga 10x lipat!\"
+	},
+	\"chapter_2\": {
+		\"Kunci\": \"Kunci cadangan ruang arsip lantai dua. Digunakan pelaku untuk menyelinap masuk pada malam hari secara ilegal.\",
+		\"Flashdisk\": \"Berisi riwayat log enkripsi sistem cloud server lokal yang merekam aktivitas penghapusan paksa data penjualan mingguan.\",
+		\"Kwitansi\": \"Lembar otorisasi pengeluaran dana fiktif yang ditandatangani terburu-buru oleh Manajer Operasional cabang.\"
+	},
+	\"chapter_3\": {
+		\"Kunci\": \"Kunci laci meja kerja pribadi sang Manajer. Menyimpan dokumen rekonsiliasi bank rahasia yang tidak pernah dilaporkan ke pusat.\",
+		\"Flashdisk\": \"Berisi rekaman instruksi digital (memo suara) kepada staf kasir untuk memanipulasi laporan kas kecil harian.\",
+		\"Kwitansi\": \"Bukti kuitansi transfer rekening pribadi luar negeri yang digunakan sebagai instrumen pencucian uang korupsi kafe.\"
+	}
+}
+
+# Preload scene SlotBukti
+const SLOT_BUKTI = preload(\"res://src/analisis_level/SlotBukti.tscn\")
+
+# Ambil texture barang bukti
+var tex_kunci = preload(\"res://assets/evidence/kunci.png\")
+var tex_fd = preload(\"res://assets/evidence/flashdisk.png\")
+var tex_kwitansi = preload(\"res://assets/evidence/kwitansi.jpg\")
+
+# ==================== PERBAIKAN JALUR NODE (TREE BARU) ====================
+# Berdasarkan susunan scenemu, DataComparison/TextureRect harus diakses lewat CanvasLayer
+@onready var slot_container = $CanvasLayer/TextureRect/HBoxContainer 
+@onready var story_panel = $CanvasLayer/StoryPanel
+@onready var story_label = $CanvasLayer/StoryPanel/StoryLabel
+# ==========================================================================
+
+func _ready() -> void:
+	story_panel.hide()
+	
+	# Keamanan tambahan: Pastikan node HBoxContainer-nya beneran ketemu sebelum memproses data
+	if slot_container == null:
+		push_error(\"CRITICAL ERROR: Node HBoxContainer tidak ditemukan! Periksa kembali apakah kamu sudah membuat HBoxContainer di dalam CanvasLayer/TextureRect.\")
+		return
+		
+	input_bukti_ke_meja()
+
+func input_bukti_ke_meja():
+	var bukti_pemain = [\"Kunci\", \"Flashdisk\", \"Kwitansi\"]
+	
+	# Bersihkan container terlebih dahulu dari sisa slot lama
+	for child in slot_container.get_children():
+		child.queue_free()
+	
+	for nama in bukti_pemain:
+		var slot_baru = SLOT_BUKTI.instantiate()
+		slot_container.add_child(slot_baru) 
+		
+		var texture_barang = dapatkan_texture(nama)
+		slot_baru.set_bukti(nama, texture_barang)
+		
+		# Hubungkan sinyal dari slot bukti
+		slot_baru.analisis_selesai.connect(_on_barang_selesai_dianalisis)
+		slot_baru.btn_analisis.pressed.connect(func(): _on_slot_klik(slot_baru))
+
+func dapatkan_texture(nama):
+	match nama:
+		\"Kunci\": return tex_kunci
+		\"Flashdisk\": return tex_fd
+		\"Kwitansi\": return tex_kwitansi
+	return null
+
+func _on_slot_klik(slot):
+	if not slot.sedang_analisis and slot.btn_analisis.text != \"Lihat Hasil\":
+		slot.mulai_proses_analisis()
+	elif slot.btn_analisis.text == \"Lihat Hasil\":
+		tampilkan_cerita(slot.nama_item)
+
+func _on_barang_selesai_dianalisis(nama_barang):
+	print(\"Notifikasi: Analisis selesai untuk \" + nama_barang)
+
+func tampilkan_cerita(nama_barang):
+	# Ambil chapter aktif secara dinamis dari global script (autoload)
+	var chapter_aktif = Global.current_chapter
+	
+	if database_cerita.has(chapter_aktif) and database_cerita[chapter_aktif].has(nama_barang):
+		var cerita = database_cerita[chapter_aktif][nama_barang]
+		story_label.text = \"[b]HASIL ANALISIS \" + nama_barang.to_upper() + \":[/b]\\n\\n\" + cerita
+		story_panel.show()
+	else:
+		push_error(\"Data cerita tidak ditemukan untuk chapter: \" + str(chapter_aktif) + \" dengan barang: \" + nama_barang)
+
+func _on_close_button_pressed():
+	story_panel.hide()
+
+# Button Kembali ke Lobby (Hubungkan dari panel inspector tombol Back kamu)
+func _on_back_button_pressed():
+	print(\"Kembali ke Main Lobby...\")
+	# Memindahkan scene kembali ke lobby utama secara aman
+	get_tree().change_scene_to_file(\"res://src/ui/main_lobby/main_lobby.tscn\")
+
+func _on_story_label_finished() -> void:
+	pass
+"
+
+[node name="Control" type="Control" unique_id=1629039575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_oedd3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=353165385]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=508373118]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -247.0
+offset_right = 84.125
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b2k2x")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TextureRect" unique_id=1181993284]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16800001
+anchor_top = 0.37100002
+anchor_right = 0.84800005
+anchor_bottom = 0.694
+offset_left = 0.5709839
+offset_top = 0.26898193
+offset_right = -0.5941162
+offset_bottom = 0.2659912
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect" unique_id=131902647]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -255.0
+offset_top = 281.0
+offset_right = 256.0
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_shwe3")
+theme_override_font_sizes/font_size = 50
+text = "Forensik Bukti"
+horizontal_alignment = 1
+
+[node name="LoadingPanel" type="ColorRect" parent="CanvasLayer" unique_id=2043010317]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="Label" type="Label" parent="CanvasLayer/LoadingPanel" unique_id=1961079917]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_qt5q0")
+theme_override_font_sizes/font_size = 50
+text = "Menganalisis...."
+
+[node name="StoryPanel" type="Panel" parent="CanvasLayer" unique_id=1901602378]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StoryLabel" type="RichTextLabel" parent="CanvasLayer/StoryPanel" unique_id=2020348103]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/StoryPanel" unique_id=636877782]
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 20.0
+offset_right = 1120.0
+offset_bottom = 51.0
+text = "X"
+
+[connection signal="finished" from="CanvasLayer/StoryPanel/StoryLabel" to="." method="_on_story_label_finished"]

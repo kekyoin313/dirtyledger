@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://g6aqs4fysyi7"]
+
+[ext_resource type="Script" uid="uid://4ta4k0f3bu5i" path="res://src/ui/dialog_box/DialogManager.gd" id="1_5607q"]
+
+[node name="DialogManager" type="CanvasLayer" unique_id=1228488748]
+script = ExtResource("1_5607q")
+
+[node name="Background" type="TextureRect" parent="." unique_id=211416847]
+offset_right = 1149.0
+offset_bottom = 649.0
+
+[node name="KarakterSprite" type="TextureRect" parent="." unique_id=1615771560]
+offset_left = 84.0
+offset_top = 98.0
+offset_right = 291.0
+offset_bottom = 565.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=130523709]
+offset_top = 365.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="NamaLabel" type="Label" parent="TextureRect" unique_id=1457930192]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 24.0
+offset_right = 247.0
+offset_bottom = 62.0
+text = "Mr. Luxic"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="TextureRect" unique_id=337534674]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 52.0
+offset_right = 1084.0
+offset_bottom = 202.0
+
+[node name="NextButton" type="Button" parent="TextureRect" unique_id=252590693]
+layout_mode = 0
+offset_left = 961.0
+offset_top = 215.0
+offset_right = 1086.0
+offset_bottom = 247.0
+
+[connection signal="pressed" from="TextureRect/NextButton" to="." method="_on_next_button_pressed"]

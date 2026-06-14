@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://b87fk81trt1a5"]
+
+[ext_resource type="Script" uid="uid://1cdq12evena0" path="res://src/ui/main_lobby/main_lobby.gd" id="1_cdymi"]
+[ext_resource type="Texture2D" uid="uid://d4hubqvm4xujw" path="res://Generated Image March 28, 2026 - 12_26AM.png" id="1_xe48q"]
+[ext_resource type="Texture2D" uid="uid://kfe7e2ayqva1" path="res://assets/ui_banner/docket/Docket.png" id="3_6yxf8"]
+[ext_resource type="Texture2D" uid="uid://dugdyuxjde8ws" path="res://assets/button_home/laboratory/Lab.png" id="3_mjkbr"]
+[ext_resource type="Texture2D" uid="uid://b3tdd6i44r6oi" path="res://assets/ui_banner/docket/Docket3.png" id="4_hpkec"]
+[ext_resource type="Texture2D" uid="uid://b2r6ovlfkngvl" path="res://assets/button_home/laboratory/Lab2.png" id="4_mufg6"]
+[ext_resource type="Texture2D" uid="uid://dc5q81poas53l" path="res://assets/ui_banner/docket/Docket2.png" id="5_1qukv"]
+[ext_resource type="Texture2D" uid="uid://cundmnr4v7k2d" path="res://assets/ui_banner/deposition/Deposition.png" id="6_f1aqu"]
+[ext_resource type="Texture2D" uid="uid://dgsevmukr67jg" path="res://assets/button_home/achievement/Achievement2.png" id="6_qyhxa"]
+[ext_resource type="Texture2D" uid="uid://drr2wx20pokfp" path="res://assets/ui_banner/deposition/Deposition1.png" id="7_hy587"]
+[ext_resource type="Texture2D" uid="uid://hnocf0lg24lr" path="res://assets/button_home/settings/Settings.png" id="7_pefj1"]
+[ext_resource type="Texture2D" uid="uid://da5jx74gxq7lv" path="res://assets/button_home/settings/Settings2.png" id="8_gq5b2"]
+[ext_resource type="Texture2D" uid="uid://dthpx1gtsjd2q" path="res://assets/button_home/exit/exit.png" id="8_mufg6"]
+[ext_resource type="Texture2D" uid="uid://cjbgyxmkea871" path="res://assets/ui_banner/subpoena/Subpoena.png" id="8_u0uk5"]
+[ext_resource type="Texture2D" uid="uid://cnousbf12y12g" path="res://assets/button_home/exit/exit2.png" id="9_0rkk8"]
+[ext_resource type="Texture2D" uid="uid://difhb7blyfr2l" path="res://assets/ui_banner/subpoena/Subpoena1.png" id="9_mjkbr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe48q"]
+bg_color = Color(0.32481623, 0.14865017, 0.0036213577, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qyhxa"]
+load_path = "res://.godot/imported/Achievement.png-ea9c7aa0c1f1471f0d78022b271f57e4.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mufg6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rkk8"]
+bg_color = Color(0.22726095, 0.71715575, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control" unique_id=531827254]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cdymi")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1778237179]
+modulate = Color(0.25123298, 0.25123483, 0.23594797, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("1_xe48q")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="." unique_id=57717363]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 553.0
+offset_right = 1122.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe48q")
+
+[node name="LeftPanel" type="HBoxContainer" parent="Panel2" unique_id=292824558]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 562.0
+offset_bottom = 82.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="DailyQuestionButton" type="TextureButton" parent="Panel2/LeftPanel" unique_id=1780552917]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("3_mjkbr")
+texture_hover = ExtResource("4_mufg6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DailyQuestionButton2" type="TextureButton" parent="Panel2/LeftPanel" unique_id=1997899122]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = SubResource("CompressedTexture2D_qyhxa")
+texture_hover = ExtResource("6_qyhxa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DailyQuestionButton3" type="TextureButton" parent="Panel2/LeftPanel" unique_id=1098950372]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("7_pefj1")
+texture_hover = ExtResource("8_gq5b2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DailyQuestionButton4" type="TextureButton" parent="Panel2/LeftPanel" unique_id=178061263]
+custom_minimum_size = Vector2(90, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("8_mufg6")
+texture_hover = ExtResource("9_0rkk8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel3" type="Panel" parent="." unique_id=138359646]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 552.0
+offset_right = 484.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xe48q")
+
+[node name="HeaderUI" type="VBoxContainer" parent="Panel3" unique_id=239963903]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 370.0
+offset_bottom = 89.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="TimerLabel" type="Label" parent="Panel3/HeaderUI" unique_id=1923114128]
+custom_minimum_size = Vector2(20, 30)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="Panel3/HeaderUI" unique_id=166802123]
+custom_minimum_size = Vector2(350, 40)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mufg6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0rkk8")
+value = 100.0
+show_percentage = false
+
+[node name="EnergyLabel" type="Label" parent="Panel3/HeaderUI/EnergyBar" unique_id=1623535000]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 9.0
+offset_right = 254.0
+offset_bottom = 32.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=882884661]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 29.0
+offset_right = 1080.0
+offset_bottom = 519.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1807239303]
+custom_minimum_size = Vector2(0, 242)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=916084312]
+custom_minimum_size = Vector2(974, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_6yxf8")
+texture_pressed = ExtResource("4_hpkec")
+texture_hover = ExtResource("5_1qukv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=252874311]
+custom_minimum_size = Vector2(0, 242)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=668976704]
+custom_minimum_size = Vector2(485, 0)
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=934677699]
+custom_minimum_size = Vector2(485, 0)
+layout_mode = 2
+texture_normal = ExtResource("6_f1aqu")
+texture_hover = ExtResource("7_hy587")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Button2" type="TextureButton" parent="VBoxContainer/HBoxContainer2/HBoxContainer" unique_id=1422062117]
+custom_minimum_size = Vector2(485, 0)
+layout_mode = 2
+texture_normal = ExtResource("8_u0uk5")
+texture_hover = ExtResource("9_mjkbr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Panel2/LeftPanel/DailyQuestionButton4" to="." method="_on_button_exit"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_prologue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/Button" to="." method="_on_deposition_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/Button2" to="." method="_on_subpoena_button_pressed"]

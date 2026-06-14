@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://7l42vi0otb61"]
+
+[ext_resource type="Script" uid="uid://d3p7fjcwvllus" path="res://src/ui/main_menu/main_menu.gd" id="1_bx7nr"]
+[ext_resource type="Texture2D" uid="uid://ddcwsqtbav4ik" path="res://assets/bg_level/bg_main_menu2.png" id="2_2fv3r"]
+[ext_resource type="Texture2D" uid="uid://ceb3ot1387hw7" path="res://assets/Blue/button_rectangle_depth_flat.svg" id="3_bn3d8"]
+[ext_resource type="Texture2D" uid="uid://byfa0pvwe7vm5" path="res://assets/Blue/button_rectangle_depth_gloss.svg" id="4_utof7"]
+[ext_resource type="Texture2D" uid="uid://dknya0j08q12y" path="res://assets/Blue/button_rectangle_depth_gradient.svg" id="5_5rq32"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="6_rd1ra"]
+[ext_resource type="AudioStream" uid="uid://blstyr8l04vd0" path="res://assets/bgm/Lobby - Library of Ruina OST - (320 Kbps).mp3" id="8_bf612"]
+[ext_resource type="PackedScene" uid="uid://b3qkn756qjr1f" path="res://src/ui/ui_options/OptionMenu.tscn" id="9_vexca"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rik1"]
+texture = ExtResource("2_2fv3r")
+
+[node name="MainMenu" type="Control" unique_id=1466727330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bx7nr")
+
+[node name="Background" type="Panel" parent="." unique_id=623692125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2rik1")
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=895201751]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = 46.0
+offset_right = 199.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="TextureButton" type="TextureButton" parent="MainButtons" unique_id=1966780292]
+layout_mode = 2
+texture_normal = ExtResource("3_bn3d8")
+texture_pressed = ExtResource("4_utof7")
+texture_hover = ExtResource("5_5rq32")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainButtons/TextureButton" unique_id=1077922591]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rd1ra")
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="TextureButton2" type="TextureButton" parent="MainButtons" unique_id=292099322]
+layout_mode = 2
+texture_normal = ExtResource("3_bn3d8")
+texture_pressed = ExtResource("4_utof7")
+texture_hover = ExtResource("5_5rq32")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainButtons/TextureButton2" unique_id=1519992424]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rd1ra")
+theme_override_font_sizes/font_size = 30
+text = "Option"
+
+[node name="TextureButton3" type="TextureButton" parent="MainButtons" unique_id=1746464971]
+layout_mode = 2
+texture_normal = ExtResource("3_bn3d8")
+texture_pressed = ExtResource("4_utof7")
+texture_hover = ExtResource("5_5rq32")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MainButtons/TextureButton3" unique_id=1425586249]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rd1ra")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=485531462]
+stream = ExtResource("8_bf612")
+autoplay = true
+bus = &"Music"
+
+[node name="Options" parent="." unique_id=1142443925 instance=ExtResource("9_vexca")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 377.0
+offset_top = 169.0
+offset_right = 769.0
+offset_bottom = 561.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=996453791]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 591.0
+offset_right = 184.0
+offset_bottom = 638.0
+texture_normal = ExtResource("3_bn3d8")
+texture_pressed = ExtResource("4_utof7")
+texture_hover = ExtResource("5_5rq32")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=829710816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -11.5
+offset_right = 53.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_rd1ra")
+theme_override_font_sizes/font_size = 25
+text = "Credits"
+
+[connection signal="pressed" from="MainButtons/TextureButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/TextureButton2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/TextureButton3" to="." method="_on_exit_pressed"]

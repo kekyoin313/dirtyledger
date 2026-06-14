@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dw0o27p8mbn8i"]
+
+[ext_resource type="Script" uid="uid://b6cci7l4ivljn" path="res://src/ui/auth/authentication.gd" id="1_juoka"]
+[ext_resource type="Texture2D" uid="uid://ddcwsqtbav4ik" path="res://assets/bg_level/bg_main_menu2.png" id="2_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://ceb3ot1387hw7" path="res://assets/Blue/button_rectangle_depth_flat.svg" id="3_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://byfa0pvwe7vm5" path="res://assets/Blue/button_rectangle_depth_gloss.svg" id="4_0o4t1"]
+[ext_resource type="AudioStream" uid="uid://blstyr8l04vd0" path="res://assets/bgm/Lobby - Library of Ruina OST - (320 Kbps).mp3" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://dknya0j08q12y" path="res://assets/Blue/button_rectangle_depth_gradient.svg" id="5_0k4wn"]
+[ext_resource type="FontFile" uid="uid://bpbm64a16op7q" path="res://assets/Font/Kenney Future.ttf" id="6_0o4t1"]
+[ext_resource type="PackedScene" uid="uid://b3qkn756qjr1f" path="res://src/ui/ui_options/OptionMenu.tscn" id="9_dy7ct"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mb6e"]
+texture = ExtResource("2_dy7ct")
+
+[node name="Authenticate2" type="Control" unique_id=556122663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_juoka")
+
+[node name="Background" type="Panel" parent="." unique_id=94643344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0mb6e")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=913504878]
+stream = ExtResource("4_jix8l")
+autoplay = true
+bus = &"Music"
+
+[node name="Options" parent="." unique_id=1142443925 instance=ExtResource("9_dy7ct")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 377.0
+offset_top = 169.0
+offset_right = 769.0
+offset_bottom = 561.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=473968306]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 413.0
+offset_right = 645.0
+offset_bottom = 460.0
+texture_normal = ExtResource("3_dy7ct")
+texture_pressed = ExtResource("4_0o4t1")
+texture_hover = ExtResource("5_0k4wn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=911400453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -11.5
+offset_right = 53.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_0o4t1")
+theme_override_font_sizes/font_size = 25
+text = "Google"
+
+[node name="TextureButton5" type="TextureButton" parent="." unique_id=479461022]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 502.0
+offset_right = 645.0
+offset_bottom = 549.0
+texture_normal = ExtResource("3_dy7ct")
+texture_pressed = ExtResource("4_0o4t1")
+texture_hover = ExtResource("5_0k4wn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton5" unique_id=923409362]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -11.5
+offset_right = 53.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_0o4t1")
+theme_override_font_sizes/font_size = 25
+text = "Guest"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_google_button_pressed"]
+[connection signal="pressed" from="TextureButton5" to="." method="_on_guest_button_pressed"]
